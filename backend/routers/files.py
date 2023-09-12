@@ -26,7 +26,7 @@ async def get_file(file_id : UUID4, db: Session = Depends(get_db_session)):
     return FileResponse(path=file.path, filename=f"{file.file_name}.{file.extension}")
 
 @router.head('/{file_id}', response_class=Response)
-async def get_information_about_file(file_id : UUID4, db: Session = Depends(get_db_session)):
+async def get_information_about_file(file_id : UUID4, db: Session = Depends(get_db_session)) -> Response:
     file : InformationAboutFile = FileService(db).get_information_about_file(file_id)
 
     if file is None:
