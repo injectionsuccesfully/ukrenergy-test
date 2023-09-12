@@ -11,7 +11,7 @@ router = APIRouter(prefix='/files', tags=['files'])
 
 @router.get('/top', response_model=list[File])
 async def get_top_files(db: Session = Depends(get_db_session)):
-    return FileService(db).get_top_ten_files()
+    return FileService(db).get_top_ten_files_by_size()
 
 @router.get('/{file_id}')
 async def get_file(file_id : UUID4, db: Session = Depends(get_db_session)):
@@ -35,9 +35,7 @@ async def get_information_about_file(file_id : UUID4, db: Session = Depends(get_
     return Response(headers={
         'Content-Length' : str(file.size),
         'Content-Type': file.content_type
-    },
-    status_code=200
-    )
+    },status_code=200)
 
 @router.post('', response_model=CreatedFile)
 async def upload_file(file: UploadFile, db : Session = Depends(get_db_session)) -> CreatedFile:
