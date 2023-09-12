@@ -20,7 +20,7 @@ async def get_file(file_id : UUID4, db: Session = Depends(get_db_session)):
     if file is None:
         return JSONResponse(content={'message':'File not found!'}, status_code=404)
 
-    if FileService(db).check_if_file_exist(file.path) is False:
+    if FileService(db).check_if_file_exist_by_path(file.path) is False:
         return JSONResponse(content={'message':'File not found!'}, status_code=404)
 
     return FileResponse(path=file.path, filename=f"{file.file_name}.{file.extension}")

@@ -46,5 +46,5 @@ class FileService(Service):
     def get_top_ten_files(self) -> list[File]:
         return self.db.query(File).order_by(desc(File.size)).limit(10).all()
     
-    def check_if_file_exist(self, path: str) -> bool:
+    def check_if_file_exist_by_path(self, path: str) -> bool:
         return DiskStorage.check_if_file_exist(path)
