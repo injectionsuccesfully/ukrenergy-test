@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends
 from fastapi.responses import FileResponse, JSONResponse, Response
 from schemas.file import File, CreatedFile, InformationAboutFile
 from fastapi import UploadFile
-from services.file import FileService
+from services.file.file import FileService
 from sqlalchemy.orm import Session
 from database.main import get_db_session
 from pydantic import UUID4

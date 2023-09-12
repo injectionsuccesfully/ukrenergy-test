@@ -1,5 +1,5 @@
 from models.file import File
-from .main import Service
+from ..utils.main import Service
 from sqlalchemy import desc
 from fastapi import UploadFile
 from .diskstorage import DiskStorage

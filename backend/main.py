@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from routers import files
-from services.appinitializer import AppInitializerService
+from services.app.appinitializer import AppInitializerService
 
 AppInitializerService().initialize_db()
 
