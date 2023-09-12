@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "4f80a5c6-f346-47f4-96ff-25a75b5e2a7f",
+		"name": "ukr-energy-back",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get top 10 files",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/files/top",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"files",
+						"top"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get file by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/files/5aa43bc5-770e-4345-a6f5-c005581223c3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"files",
+						"5aa43bc5-770e-4345-a6f5-c005581223c3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get information about file",
+			"request": {
+				"method": "HEAD",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:3000/files/9b842bd2-c072-4438-88bb-0db61e7ad897",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"files",
+						"9b842bd2-c072-4438-88bb-0db61e7ad897"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload file",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/nikita/Рабочий стол/avatar.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/files",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"files"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
